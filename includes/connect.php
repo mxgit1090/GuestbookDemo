@@ -2,15 +2,17 @@
 	/*
 	 * TODO: Set paraments
 	 */
-	function connectMysql ($dbname) {
-		$host = "localhost:3306";
-		$username = "root";
-		$passwd   = "root";
+	require("./config.php");
+
+	function connectMysql () {
+		$host     = MYSQL_HOST;
+		$username = MYSQL_USER;
+		$passwd   = MYSQL_PASSWORD;
+		$dbname   = MYSQL_DBNAME;
 		try {
 			$conn = new PDO("mysql:host=".$host.";dbname=".$dbname.";", $username, $passwd);
-			// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo "Connection success!\n";
+			
 			return $conn;
 	    }
 		catch(PDOException $e) {

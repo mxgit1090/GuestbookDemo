@@ -1,5 +1,4 @@
 <?php
-	//session_start();
 	include_once('session.php');
 	gbd_session_start();
 
@@ -9,7 +8,4 @@
 		else
 			return false;
 	}
-
-	if ( !isLogin() )
-		header('location: login.php');
 ?>

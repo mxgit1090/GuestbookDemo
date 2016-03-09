@@ -12,6 +12,9 @@
 		"createdDateTime" => ""
 	);
 
+	if ( !isLogin() )
+		header('location: login.php');
+
 	if ($_GET) {
 		$get_article = $conn->prepare("SELECT * FROM Guestbook WHERE id=:id");
 		$get_article->bindParam(":id", $_GET['id']);
@@ -30,7 +33,7 @@
 	$conn = null;
 ?>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="public/css/style.css">
 
 <div class="page_container" style="text-align:center;">
 	<h1>
@@ -48,6 +51,7 @@
 			<div class="comment_form">
 				<form>
 					<textarea name="content" placeholder="您想說的話？"></textarea>
+					<br>
 					<input type="submit" value="按我送出"	/>
 				</form>
 			</div>

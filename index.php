@@ -63,7 +63,7 @@
 						<a href="guestbook.php?&id=<?=$item['id']?>">閱讀更多</a>
 					</div>
 					<?php if ( isLogin() ): ?>
-						<a href="/resources/delete.php">刪除本文</a>
+						<a href="resources/delete.php?id=<?=$item['id']?>">刪除本文</a>
 					<?php endif; ?>
 				</div>
 

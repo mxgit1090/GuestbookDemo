@@ -1,5 +1,4 @@
 <?php
-	//session_start();
 	include_once('./includes/connect.php');
 	include_once('./includes/session.php');
 	gbd_session_start();

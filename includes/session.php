@@ -30,7 +30,9 @@
 
 		// 設定 session 名稱
 		session_name($session_name);
-		session_start();
+		if (!isset($_SESSION))
+			session_start();
+		
 		// 重新產生 session_id
 		session_regenerate_id(true);
 	}

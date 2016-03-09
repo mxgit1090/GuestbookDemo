@@ -5,7 +5,6 @@
 	gbd_session_start();
 	date_default_timezone_set("Asia/Taipei");
 
-
 	if ($_POST) {
 		$conn = connectMysql("GuestbookDemo");
 

@@ -1,9 +1,7 @@
-<?php 
-	// session_start();
+<?php
 	include_once('./includes/session.php');
 	gbd_session_start();
 
-	//unset($_SESSION['login_user']);
 	// Get session parameters
 	$cookieParams = session_get_cookie_params();
 
