@@ -1,7 +1,7 @@
 <?php
 	//session_start();
-	include_once('./connect.php');
-	include_once('./session.php');
+	include_once('./includes/connect.php');
+	include_once('./includes/session.php');
 	gbd_session_start();
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -12,10 +12,6 @@
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
 		
-
-		//$q->setFetchMode(PDO::FETCH_ASSOC);
-
-
 		$q->execute(array(
 			"username" => $username,
 			"password" => $password
@@ -24,22 +20,24 @@
 
 		// Why fetchColumn makes the result empty
 		$count = $q->rowCount();
-		//$row = $q->fetch();
 		
 		if ($count >= 1) {
 			$row = $q->fetch();
-			//print_r($row);
-			//session_register($row['username']);
-			$_SESSION['login_user'] = $row['username'];
+			
+			$_SESSION['login_user']    = $row['username'];
+			$_SESSION['login_user_id'] = $row['id'];
 			header("location: index.php");
 		}
 
+		$conn = null;
 	}
 ?>
 
+<link rel="stylesheet" type="text/css" href="public/css/style.css">
+
 <div class="page_container">
 	<form action="login.php" method="POST">
-		<table>
+		<table class="login">
 			<tr>
 				<td><label  for="username">帳號</label></td>
 				<td><input name="username"></input></td>

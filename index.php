@@ -1,8 +1,10 @@
 <?php 
 	// Use session
 	//session_start();
-	include_once('./connect.php');
-	include_once('./session.php');
+	include_once('./includes/connect.php');
+	include_once('./includes/session.php');
+	include_once('./includes/ensure_login.php');
+
 	// 啟動 session
 	gbd_session_start();
 	
@@ -25,7 +27,7 @@
 	}
 ?>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="public/css/style.css">
 
 <div class="page_container">
 <h1> 超簡易留言版 </h1>
@@ -60,6 +62,9 @@
 						<?= nl2br(substr($item['content'], 0, 100))?> ...
 						<a href="guestbook.php?&id=<?=$item['id']?>">閱讀更多</a>
 					</div>
+					<?php if ( isLogin() ): ?>
+						<a href="/resources/delete.php">刪除本文</a>
+					<?php endif; ?>
 				</div>
 
 
@@ -79,7 +84,7 @@
 
 <hr>
 
-<?php if (isset($_SESSION['login_user']) && $_SESSION['login_user'] != null): ?>
+<?php if ( isLogin() ): ?>
 	
 	<form action="index.php" method="POST">
 		<table id="table_create" align="center">

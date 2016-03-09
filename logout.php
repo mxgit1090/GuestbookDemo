@@ -1,6 +1,6 @@
 <?php 
 	// session_start();
-	include_once('./session.php');
+	include_once('./includes/session.php');
 	gbd_session_start();
 
 	//unset($_SESSION['login_user']);
@@ -11,7 +11,8 @@
 		$cookieParams['path'],
 		$cookieParams['domain'],
 		$cookieParams['secure'],
-		$cookieParams['httponly']);
+		$cookieParams['httponly']
+	);
 	
 	// Destroy sessions
 	session_destroy();

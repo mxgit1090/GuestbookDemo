@@ -1,5 +1,24 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+a {
+	color: #ee7;
+}
+
+a:visited {
+	color: #aaf;
+}
+
 .page_container {
-	 text-align:center;
+	 text-align: center;
+	 line-height: 1.5;
+}
+
+.login {
+	margin: 2em auto;
+	text-align: center;
 }
 
 #table_create {
