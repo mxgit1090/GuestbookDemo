@@ -1,5 +1,5 @@
 -- DBNAME: GuestbookDemo --
-SET NAMES 'UTF-8';
+SET NAMES 'UTF8';
 
 CREATE DATABASE IF NOT EXISTS GuestbookDemo;
 USE GuestbookDemo;
