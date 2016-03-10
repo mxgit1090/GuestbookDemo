@@ -7,5 +7,6 @@ cd path/of/public_html/
 git clone https://github.com/mxgit1090/GuestbookDemo.git
 cd GuestbookDemo
 cp config/config.php .
+# Then Modify the content of config.php
 mysql < schema/guestbook.sql
 ```
