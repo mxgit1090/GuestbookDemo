@@ -43,3 +43,17 @@ CREATE TABLE GuestbookCategoryMapping (
 	`guestbookId`  int(11) COMMENT '文章 ID',
 	`categoryId`   int(11) COMMENT '分類 ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS User;
+
+CREATE TABLE `User` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '使用者 ID',
+  `username` text NOT NULL COMMENT '使用者名稱',
+  `password` varchar(34) NOT NULL COMMENT '密碼',
+  `type` int(11) DEFAULT '0' COMMENT '使用者類別',
+  `profile` mediumtext COMMENT '使用者資訊',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `User` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3',999,NULL);
