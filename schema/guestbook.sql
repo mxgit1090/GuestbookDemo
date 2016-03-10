@@ -31,7 +31,7 @@ CREATE TABLE Comment (
 	`guestbookId` int(11) NOT NULL DEFAULT 0 COMMENT '文章 ID',
 	`userId`      int(11) NOT NULL DEFAULT 0 COMMENT '作者 ID',
 	`content` longtext    COMMENT '文章內容',
-	`isPublic` int(1) NOT NULL DEFAULT 0 COMMENT:'是否公開',
+	`isPublic` int(1) NOT NULL DEFAULT 0 COMMENT '是否公開',
 	`updatedDateTime` datetime COMMENT '更新日期',
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
